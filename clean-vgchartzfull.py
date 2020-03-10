@@ -212,10 +212,13 @@ if __name__ == "__main__":
                 soup = BeautifulSoup(r.text, 'lxml')
                 print("******Scraping page " + str(page) + "******'\n")
 
+                # with open("page_" + str(page) + ".html", "w+", encoding="utf-8") as f_out :
+                #     f_out.write(soup.prettify())
+
                 # vgchartz website is really weird so we have to search for
                 # <a> tags with game urls
                 game_tags = list(filter(
-                    lambda x: x.attrs['href'].startswith('http://www.vgchartz.com/game/'), soup.find_all("a")))[10:]
+                    lambda x: x.attrs['href'].startswith('https://www.vgchartz.com/game/'), soup.find_all("a")))[10:]
                 # discard the first 10 elements because those
                 # links are in the navigation bar
 

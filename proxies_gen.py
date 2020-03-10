@@ -14,7 +14,7 @@ def get_proxies(num=None):
     #         proxy = ":".join([i.xpath('.//td[1]/text()')[0], i.xpath('.//td[2]/text()')[0]])
     #         proxies.append(proxy)
 
-    link = "https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=1000&country=all&ssl=all&anonymity=all&uptime=100"
+    link = "https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=1000&country=all&ssl=all&anonymity=all"
     proxies = list(requests.get(link).text.split())
     np.random.shuffle(proxies)
     proxies = []
